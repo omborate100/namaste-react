@@ -4,6 +4,8 @@
   "description": "react course from zero to prod level",
   "main": "App.js",
   "scripts": {
+    "start" : "parcel index.html",
+    "build" : "parcel build index.html",
     "test": "jest"
   },
   "author": "Om Borate",

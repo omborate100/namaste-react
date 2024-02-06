@@ -21,18 +21,28 @@ const heading = React.createElement(
 </div>        
 */
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "This is namaste react "),
-    React.createElement("h2", {}, "I'm a h2 tag"),
-  ]),
-  ,
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I'm a h1 tag"),
-    React.createElement("h2", {}, "I'm a h2 tag"),
-  ]),
-]);
+// it's to much complex so jsx makes it easy for developers 
+// const parent = React.createElement("div", { id: "parent" }, [
+//   React.createElement("div", { id: "child" }, [
+//     React.createElement("h1", {}, "This is namaste react "),
+//     React.createElement("h2", {}, "I'm a h2 tag"),
+//   ]),
+//   ,
+//   React.createElement("div", { id: "child2" }, [
+//     React.createElement("h1", {}, "I'm a h1 tag"),
+//     React.createElement("h2", {}, "I'm a h2 tag"),
+//   ]),
+// ]);
 
 console.log(heading); // its object
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+
+const JsxElement=() => (<h1>Namaste React from jsx 🚀</h1>);
+
+const HeadingComponent = () => (
+    <div>
+		<JsxElement/>
+  		<h1>Namaste React from functional component </h1>
+    </div>
+);
+root.render(<HeadingComponent/>);
