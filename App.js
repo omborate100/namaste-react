@@ -1,48 +1,58 @@
 import React from "react";
-import ReactDOM  from "react-dom/client";
-
-const heading = React.createElement(
-  "h1",
-  { id: "heading" },
-  "Hello world from React!!!"
-);
-
-// creating a nested structure
-/*
-<div id="parent">
-    <div id="child">
-        <h1> I'm a h1 tag! </h1>
-        <h2> I'm a h2 tag! </h2>
+import ReactDOM from "react-dom/client";
+import logo from "./images/logo.jpg";
+import resLogo from "./images/res-logo.png";
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-comp">
+        <img className="logo" src={logo} alt="logo" />
+      </div>
+      <div className="nav-item">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
     </div>
-    <div id="child2">
-        <h1> I'm a h1 tag! </h1>
-        <h2> I'm a h2 tag! </h2>
+  );
+};
+
+const ResCard = (props) =>{
+	console.log(props); // props is an object
+	return (
+		<div className="res-card">
+			<img className= "res-logo" src={resLogo} alt="res-logo" />
+			<h3>{props.resName}</h3>
+			<h4>{props.cuisine}</h4>
+			<h4>4.4 ⭐</h4>
+			<h4>38 minutes</h4>
+		</div>
+	)
+}
+const Body = ()=>{
+	return (
+		<div className="body">
+			<div className="search">Search</div>
+			<div className="res-container">
+				<ResCard resName="Meghana Foods" cuisine="Biryani, South Indian, Seafoods"/>
+				<ResCard resName="KFC" cuisine="Burger, Fast Foods"/>
+			</div>
+			
+		</div>
+	)
+}
+
+const AppLayout = () => {
+  return (
+    <div className="main-component">
+      <Header />
+	  <Body />
     </div>
-</div>        
-*/
+  );
+};
 
-// it's to much complex so jsx makes it easy for developers 
-// const parent = React.createElement("div", { id: "parent" }, [
-//   React.createElement("div", { id: "child" }, [
-//     React.createElement("h1", {}, "This is namaste react "),
-//     React.createElement("h2", {}, "I'm a h2 tag"),
-//   ]),
-//   ,
-//   React.createElement("div", { id: "child2" }, [
-//     React.createElement("h1", {}, "I'm a h1 tag"),
-//     React.createElement("h2", {}, "I'm a h2 tag"),
-//   ]),
-// ]);
-
-console.log(heading); // its object
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-const JsxElement=() => (<h1>Namaste React from jsx 🚀</h1>);
-
-const HeadingComponent = () => (
-    <div>
-		<JsxElement/>
-  		<h1>Namaste React from functional component </h1>
-    </div>
-);
-root.render(<HeadingComponent/>);
+root.render(<AppLayout />);
