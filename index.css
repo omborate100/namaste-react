@@ -20,6 +20,10 @@
 }
 .search{
     padding: 10px;
+    display: flex;
+}
+.filter{
+    margin : 0 20px;
 }
 .res-container{
     display: flex;
@@ -41,4 +45,8 @@
     width: 240px;
     height: 190px;
     padding: 5px;
+}
+.login-btn{
+    margin: 10px 20px;
+    background-color: cadetblue;
 }
